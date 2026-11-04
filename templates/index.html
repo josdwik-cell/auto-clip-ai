@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0b0d12"><meta name="description" content="Ubah podcast panjang menjadi clip pendek pilihan AI."><link rel="manifest" href="/static/manifest.webmanifest"><link rel="icon" href="/static/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/static/icon-192.png">
+<title>Auto Clip AI — Podcast Viral</title><link rel="stylesheet" href="/static/style.css"></head>
+<body><main class="shell">
+<header><div class="logo">✂</div><div><div class="brand">AUTO CLIP <span>AI</span></div><small>PODCAST → SHORTS VIRAL</small></div><span class="pill">AI STUDIO</span></header>
+<section class="hero"><p class="eyebrow">POTONG OTOMATIS DENGAN AI</p><h1>Temukan momen podcast<br><em>yang layak jadi viral.</em></h1><p class="sub">Upload podcast panjang. AI membaca transkrip, memilih momen paling kuat, lalu membuat video vertikal siap diunduh.</p></section>
+<form id="form">
+<section class="panel"><div class="section-head"><span class="num">01</span><div><h2>Upload podcast</h2><p>Video dengan suara yang jelas memberi hasil terbaik.</p></div></div>
+<label class="drop" id="drop"><input type="file" name="video" id="video" accept="video/*" required><span class="upload-icon">↑</span><b id="file-title">Pilih video podcast</b><small id="file-meta">MP4, MOV, MKV, WEBM · Maks. 2 GB</small><span class="browse">PILIH FILE</span></label>
+<video id="preview" controls hidden></video></section>
+<section class="panel"><div class="section-head"><span class="num">02</span><div><h2>Atur hasil clip</h2><p>AI memprioritaskan hook, cerita, opini, dan punchline.</p></div></div>
+<div class="fields"><label>Jumlah clip<select name="count"><option>3</option><option selected>5</option><option>7</option><option>10</option></select></label><label>Target durasi<select name="clip_len"><option value="30">± 30 detik</option><option value="45" selected>± 45 detik</option><option value="60">± 60 detik</option><option value="90">± 90 detik</option></select></label></div>
+<div class="format"><span>FORMAT OUTPUT</span><b>9:16 · 1080 × 1920</b><small>Video akan di-crop vertikal dari bagian tengah frame.</small></div></section>
+<button class="generate" id="submit">✦ &nbsp; CARI MOMEN VIRAL & BUAT CLIP</button>
+<p class="fine">Pemrosesan membutuhkan koneksi internet dan API key OpenAI yang kamu atur sendiri.</p>
+</form>
+<section id="status" class="status" hidden><div class="spinner"></div><div><b id="status-title">Sedang menganalisis podcast…</b><p id="status-text">AI sedang mentranskripsikan audio dan mencari momen terbaik. Jangan tutup halaman.</p></div></section>
+<section id="results" hidden><div class="results-head"><div><p class="eyebrow">SELESAI DIPROSES</p><h2>Clip pilihan AI</h2></div><span class="pill success" id="count-label"></span></div><div id="cards"></div></section>
+<footer>Auto Clip AI · Dibuat untuk workflow podcast short-form</footer>
+</main><script src="/static/app.js"></script><script>if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("/static/sw.js").catch(console.error));}</script></body></html>
